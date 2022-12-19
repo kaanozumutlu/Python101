@@ -1,0 +1,7 @@
+def nPrint(word):
+    i=int(input("counter: "))
+    while i>0 :
+        print(word)
+        i-=1
+
+nPrint('kaan')
