@@ -1,0 +1,8 @@
+def convertList(*args):
+    liste=[]
+    for arg in args:
+        liste.append(arg)
+    return liste
+
+result= convertList(10,99,55,90581373183,'kaan')
+print(result)
