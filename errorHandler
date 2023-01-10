@@ -1,6 +1,6 @@
+
+#1-password check
 import re
-
-
 def checkPass (pwd):
 
     if len(pwd) < 8 :
@@ -26,3 +26,48 @@ def checkPass (pwd):
         print("Giriş basarılı")
     finally:
         print("user validation finished")
+import re
+liste=["1","2","5a","10b","abc","999999"]
+
+#liste elemanları içinden sayısal değerleri bulalım
+
+'''for i in liste:
+    try:
+        result=int(i)
+        print(result)
+    except ValueError:
+        continue'''
+
+#kullanıcı q değeri girmedikçe aldığınız her inputun sayı olduguna emin olun.
+
+'''while True:
+
+    sayi=input("bir sayi giriniz ve döngüden çıkmak için q değerini giriniz: ")
+    if sayi == 'q':
+        print("döngü bitti thx bye")
+        break
+    try:
+        result=float(sayi)
+        print(f'Girdiğiniz sayi : {result}')
+    except ValueError:
+        print("yanlış girdi integer deger giriniz")
+        continue '''
+
+#parola kontrolü yapıp içinde türkçe karakter varsa hata gönderin
+'''def checkPassword(pwd):
+    turkishChracters=['ş','ü','ç','ö','ğ','ı']
+    for i in pwd:
+        if i in turkishChracters:
+            raise TypeError("you entered turkish characters")
+        else:
+            pass
+
+    print("password saved.")
+
+password1=input("enter your password: ")
+try:
+    checkPassword(password1)
+except TypeError as err:
+    print("invalid characters "+str(err))'''
+
+
