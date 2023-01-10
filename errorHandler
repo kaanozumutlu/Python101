@@ -1,0 +1,28 @@
+import re
+
+
+def checkPass (pwd):
+
+    if len(pwd) < 8 :
+        raise Exception("Parola en az 7 karakterli olmalıdır. ")
+    elif not re.search('[a-z]', pwd):
+        raise Exception("Parola en az 1 küçük harf içermelidir.")
+    elif not re.search("[A-Z]",pwd):
+        raise Exception("Parola en az 1 büyük harf içermelidir")
+    elif not re.search("[0-9]",pwd):
+        raise Exception("Parola en az 1 rakam içermelidir.")
+    elif not re.search("[_@!+%&/()=?-]",pwd):
+        raise Exception("Parola en az 1 alfa numerik karakter içermelidir.")
+    else:
+        print("gecerli parola!")
+
+
+    try:
+        Pwd=input("Parolayı giriniz: ")
+        checkPass(pwd)
+    except Exception as ex:
+        print(ex)
+    else:
+        print("Giriş basarılı")
+    finally:
+        print("user validation finished")
