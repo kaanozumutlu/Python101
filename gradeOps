@@ -1,0 +1,51 @@
+
+def notGir():
+    ad=input("Adı giriniz: ")
+    soyad=input("Soyadı giriniz: ")
+    not1=input("Not1 giriniz: ")
+    not2=input("Not2 giriniz: ")
+    not3=input("Not3 giriniz: ")
+
+    with open("notlar.txt","a",encoding="utf-8") as file:
+        file.write(ad+' '+soyad+': '+not1+','+not2+','+not3+'\n')
+def notHesapla(satir):
+    satir=satir[:-1]
+    liste=satir.split(':')
+    ogrenciAdi=liste[0]
+    notlar=liste[1]
+    not1=notlar[0]
+    not2=notlar[1]
+    not3=notlar[2]
+    ortalama=(not1+not2+not3)/3
+    return ogrenciAdi+' '+ortalama+'\n'
+
+
+def notOku():
+    with open("notlar.txt","r",encoding="utf-8") as file:
+        for satir in file:
+            print(notHesapla(satir))
+def notKaydet():
+    with open("notlar.txt", "r", encoding="utf-8") as file:
+        liste=[]
+        for i in liste:
+            liste.append(notHesapla(i))
+        with open("sonuclar.txt", "w", encoding="utf-8") as file2:
+            file2.write(i)
+while True:
+    print("1-Notları Oku\n2-Not Gir\n3-Notları Kaydet\n4-Çıkış")
+
+    secim=int(input("Seciminiz: "))
+
+    if secim==1:
+        notOku()
+
+    elif secim==2:
+        notGir()
+    elif secim==3:
+        notKaydet()
+    elif secim==4:
+        print("Cikis yapildi.")
+        break
+    else:
+        print("Yanlis secim, lütfen tekrar deneyin")
+
