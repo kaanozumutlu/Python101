@@ -1,0 +1,22 @@
+#Calculating functions time
+import math
+import time
+
+def calculateTime(func):
+    def wrapper(*args,**kwargs):
+        start=time.time()
+        time.sleep(5)
+        func(*args,**kwargs)
+        finish=time.time()
+        print("fonksiyon "+str(finish-start)+" saniye sürdü.")
+    return wrapper()
+@calculateTime
+def usAlma(a,b):
+    print(math.pow(a,b))
+@calculateTime
+def factorial(num):
+    print(math.factorial(num))
+
+
+usAlma(3,4)
+factorial(7)
