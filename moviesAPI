@@ -1,0 +1,32 @@
+import requests
+import json
+
+class theMovieDb:
+    def __init__(self) :
+        self.apiurl="https://api.themoviedb.org/3"
+        self.apikey="b1a63a150984f0c6bcea8ea70171652c"
+
+    def getPopulars(self) :
+        response= requests.get(f"{self.apiurl}/movie/top_rated?api_key={self.apikey}&language=en-US&page=1")
+        return response.json()
+    
+movieAPI= theMovieDb()
+while True: 
+
+    choice= input("Choose your choice:\n1- Popular Movies\n2- Exit\nChoice: \n")
+
+    if choice=='2':
+        print("Exit process completed")
+        break
+    else:
+        if choice=='1':
+            movies=movieAPI.getPopulars()
+            for i in movies["results"]:
+                print(movie['title'])
+            
+            print(movies)
+        else:
+            print("Wrong choice has been selected! Please try again. ")   
+
+
+
